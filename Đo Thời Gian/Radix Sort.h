@@ -3,10 +3,8 @@
 int SoLonNhat(int arr[], int n)
 {
 	int max = arr[0];
-
 	for (int i = 1; i < n; i++)
-		if (arr[i] > max)
-			max = arr[i];
+		if (arr[i] > max) max = arr[i];
 	return max;
 }
 
@@ -42,7 +40,8 @@ void CountSort(int* MangNguon, int SoLuong, int exp)
 
 void RadixSort(int arr[], int n)
 {
-	int max = SoLonNhat(arr, n); // Xác định bao nhiêu chữ số để lặp
+	// Xác định bao nhiêu chữ số để lặp
+	int max = SoLonNhat(arr, n); 
 	
 	// Sắp xếp theo cơ số cho từng hàng
 	for (int exp = 1; max / exp > 0; exp *= 10)
