@@ -18,23 +18,23 @@ using namespace std;
 // KieuPhatSinh = 1: các số tăng dần, 2: các số giảm dần, 3: các số ngẫu nhiên
 void PhatSinhDaySo(int SoLuong, int SoBatDau, int SoKetThuc, int KieuPhatSinh, const char* TenFile, const char* CheDoMoFile)
 {
-	FILE* f = fopen(TenFile, CheDoMoFile); // Mở tập tin để ghi
+	// Mở tập tin để ghi
+	FILE* f = fopen(TenFile, CheDoMoFile); 
 
 	if (KieuPhatSinh == 1)
 	{
-		for (int i = 1; i <= SoLuong; ++i)
-			fprintf(f, "%d\n", i);
+		for (int i = 1; i <= SoLuong; ++i) fprintf(f, "%d\n", i);
 		cout << "\nDu lieu voi n la " << SoLuong << " va co kieu tang dan da duoc ghi vao file " << TenFile;
 	}
 	else if (KieuPhatSinh == 2)
 	{
-		for (int i = SoLuong; i >= 1; --i)
-			fprintf(f, "%d\n", i);
+		for (int i = SoLuong; i >= 1; --i) fprintf(f, "%d\n", i);
 		cout << "\nDu lieu voi n la " << SoLuong << " va co kieu giam dan da duoc ghi vao file " << TenFile;
 	}
 	else if (KieuPhatSinh == 3)
 	{
-		srand(time(0)); // Nếu để trong vòng lặp là sẽ bị cac số giống nhau
+		// Nếu để trong vòng lặp là sẽ bị cac số giống nhau
+		srand(time(0)); 
 
 		for (int i = 1; i <= SoLuong; ++i)
 		{
@@ -57,10 +57,8 @@ bool DocDuLieuTuFile(const char* TenFile, const char* CheDoMoFile, int*& MangNgu
 	if (f != NULL)
 	{
 		MangNguon = new int[SoLuong];
-
-		for (int i = 0; i < SoLuong; ++i)
+		for (int i = 0; i < SoLuong; ++i) 
 			fscanf(f, "%d", &MangNguon[i]);
-
 		fclose(f);
 		return true;
 	}
@@ -71,11 +69,10 @@ bool DocDuLieuTuFile(const char* TenFile, const char* CheDoMoFile, int*& MangNgu
 
 void XuatFileDaSapXep(int* MangNguon, int SoLuong, const char* TenFile, const char* CheDoMoFile)
 {
-	FILE* f = fopen(TenFile, CheDoMoFile); // Mở tập tin để ghi
-
+	// Mở tập tin để ghi
+	FILE* f = fopen(TenFile, CheDoMoFile); 
 	for (int i = 0; i < SoLuong; ++i)
 		fprintf(f, "%d\n", MangNguon[i]);
-
 	fclose(f);
 }
 
@@ -102,10 +99,12 @@ int main()
 		int len1 = strlen(s1);
 		int len2 = strlen(s2);
 
-		char* TenFile = new char[len1 + len2 + 1]; // tạo ra s3 có độ dài vừa đủ cộng thêm 1 ký tự '\0'
+		// tạo ra s3 có độ dài vừa đủ cộng thêm 1 ký tự '\0'
+		char* TenFile = new char[len1 + len2 + 1]; 
 		strcpy(TenFile, s1);
 
-		char* s3 = TenFile + len1; // dịch chuyển con trỏ s3 ra sau để strcat chạy lẹ hơn
+		// dịch chuyển con trỏ s3 ra sau để strcat chạy lẹ hơn
+		char* s3 = TenFile + len1; 
 		strcat(s3, s2);
 
 		// Đo thời gian thuật toán 3 lần => lấy trung bình
@@ -114,7 +113,8 @@ int main()
 		for (int i = 1; i <= 3; ++i)
 		{
 			// Tạo dữ liệu và ghi vào file
-			// PhatSinhDaySo(SoLuong, -1000, 1000, i, TenFile, "w"); // => Phát hiện Radix Sort không xử lý được số âm
+			// PhatSinhDaySo(SoLuong, -1000, 1000, i, TenFile, "w"); 
+			// => Phát hiện Radix Sort không xử lý được số âm
 			PhatSinhDaySo(SoLuong, 0, 1000, i, TenFile, "w");
 			
 			int* MangNguon;
@@ -123,7 +123,6 @@ int main()
 			if (FileTonTai)
 			{
 				// Xử lý sắp xếp và đo thời gian
-
 				clock_t BatDau = clock() ;
 				RadixSort(MangNguon, SoLuong);
 				clock_t KetThuc = clock();
