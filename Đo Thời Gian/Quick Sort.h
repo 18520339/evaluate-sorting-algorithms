@@ -10,10 +10,8 @@ void QuickSort(int* MangNguon, int left, int right)
 	do
 	{
 		// Tìm vị trí i, j cần hoán vị
-		while (MangNguon[i] < PhanTuGiua && i < right)
-			i++;
-		while (MangNguon[j] > PhanTuGiua && j > left)
-			j--;
+		while (MangNguon[i] < PhanTuGiua && i < right) i++;
+		while (MangNguon[j] > PhanTuGiua && j > left) j--;
 
 		if (i <= j)
 		{
@@ -25,9 +23,6 @@ void QuickSort(int* MangNguon, int left, int right)
 
 	// Khi đó PhanTuGiua sẽ chốt vị trí trong mảng
 	// Ta cần gọi đệ quy đến 2 mảng con bên trái PhanTuGiua và bên phải PhanTuGiua
-	if (left < j)
-		QuickSort(MangNguon, left, j);
-
-	if (i < right)
-		QuickSort(MangNguon, i, right);
+	if (left < j) QuickSort(MangNguon, left, j);
+	if (i < right) QuickSort(MangNguon, i, right);
 }
