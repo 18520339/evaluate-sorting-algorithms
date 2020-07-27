@@ -1,5 +1,5 @@
 				Quick Sort
-Tap Du Lieu	Tang Dan		Giam Dan		Ngau Nhien	Trung Binh
+Tap Du Lieu	Tang Dan	Giam Dan	Ngau Nhien	Trung Binh
 1000		0.0000 ms	0.0000 ms	0.0000 ms	0.0000 ms
 3000		0.0000 ms	0.0000 ms	0.0000 ms	0.0000 ms
 5000		0.0000 ms	0.0000 ms	1.0000 ms	0.3333 ms
