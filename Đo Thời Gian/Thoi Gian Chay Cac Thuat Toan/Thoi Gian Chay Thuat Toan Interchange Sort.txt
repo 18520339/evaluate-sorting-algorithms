@@ -1,5 +1,5 @@
 				Interchange Sort
-Tap Du Lieu	Tang Dan		Giam Dan		Ngau Nhien	Trung Binh
+Tap Du Lieu	Tang Dan	Giam Dan	Ngau Nhien	Trung Binh
 1000		1.0000 ms	10.0000 ms	6.0000 ms	5.6667 ms
 3000		9.0000 ms	93.0000 ms	39.0000 ms	47.0000 ms
 5000		25.0000 ms	282.0000 ms	91.0000 ms	132.6667 ms
