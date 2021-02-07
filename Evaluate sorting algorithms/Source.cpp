@@ -20,7 +20,7 @@ void generate_numbers(int n, int start_num, int end_num, int choice, const char*
 	}
 	else if (choice == 2) {
 		for (int i = n; i >= 1; --i) fprintf(f, "%d\n", i);
-		cout << "\nNum range with N = " << n << " and Decending type has been written to " << file_name;
+		cout << "\nNum range with N = " << n << " and Descending type has been written to " << file_name;
 	}
 	else if (choice == 3) {
 		srand(time(0));
@@ -57,11 +57,11 @@ void export_sorted_file(int* arr, int n, const char* file_name, const char* file
 
 int main() {
 	FILE* f = fopen("Results\\Radix Sort.txt", "w");
-	fprintf(f, "\t\t\t\tRadix Sort");
-	fprintf(f, "\nN\t\tAscending\tDecending\tRandomize\tAverage");
+	fprintf(f, "\t\t\tRadix Sort");
+	fprintf(f, "\nN\tAscending\tDescending\tRandomize\tAverage");
 
 	for (int n = 1000; n <= 21000; n += 2000) {
-		fprintf(f, "\n%d\t\t", n);
+		fprintf(f, "\n%d\t", n);
 
 		char buffer[6];
 		_itoa(n, buffer, 10);
